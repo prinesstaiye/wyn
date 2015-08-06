@@ -1,25 +1,61 @@
 <!DOCTYPE html>
-	<html> 
-		<head>
-			<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-			<!-- Latest compiled and minified CSS -->
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <html> 
+    <head>
+      <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
-			<!-- Optional theme -->
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
-			<!-- Latest compiled and minified JavaScript -->
-			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		</head>
-		<body class="homepage"> 
-			<div class="page-wrap">
-			<img src="img/wyn.png" class = "wynlogo">
-			<div style="text-align: center"><img src="img/checkmark.png" class = "checkmark" width="50" height = "50"></div>
-			<p> &nbsp </p>
-			<div style="text-align: center"><img src ="img/blankcards.png" height = "400"></div>
-			<p> &nbsp </p>
-			<div style="text-align: center"><img src = "img/crossmark.png" width = "50" height "50"></div>
-		</div>
-			<footer class="site-footer"><strong>HOME</strong> | POST | PROFILE</footer>
-		</body>
-	</html>
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/jTinder.css">
+    </head>
+    <body class="homepage"> 
+      <div class="page-wrap">
+      <img src="img/wyn.png" class = "wynlogo">
+      <!-- start padding container -->
+    <div class="wrap">
+        <!-- start jtinder container -->
+        <div id="tinderslide">
+            <ul>
+                <li class="pane1">
+                    <div class="img"></div>
+                    <div>Placeholder</div>
+                    <div class="like"></div>
+                    <div class="dislike"></div>
+                </li>
+                <li class="pane2">
+                    <div class="img"></div>
+                    <div>Placeholder2</div>
+                    <div class="like"></div>
+                    <div class="dislike"></div>
+                </li>
+                <li class="pane3">
+                    <div class="img"></div>
+                    <div>Placeholder3</div>
+                    <div class="like"></div>
+                    <div class="dislike"></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+            <p> &nbsp </p>
+            <p> &nbsp </p>
+            <footer class="site-footer"><strong>HOME</strong> | POST | PROFILE</footer>
+          </div>
+      <!-- jQuery lib -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+<!-- transform2d lib -->
+<script type="text/javascript" src="js/jquery.transform2d.js"></script>
+
+<!-- jTinder lib -->
+<script type="text/javascript" src="js/jquery.jTinder.js"></script>
+
+<!-- jTinder initialization script -->
+<script>$("#tinderslide").jTinder();</script>
+
+    </body>
+  </html>
