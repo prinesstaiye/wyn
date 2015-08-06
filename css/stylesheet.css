@@ -15,4 +15,39 @@
 
 .homepage {
 	background-color: #E8D0A9;
+	text-align: center;
+}
+
+.site-footer {
+	background-color: #000;
+	text-align: center;
+	color: #fff;
+	font-size: 30px;
+}	
+
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -50px; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  height: 50px; 
+}
+
+.wynlogo
+{
+	height: auto;
+	width: auto;
+	max-width: 360px;
+	max-height: 240px;
 }
