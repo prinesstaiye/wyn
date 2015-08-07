@@ -37,3 +37,23 @@
 	max-width: 200px;
 }
 
+.li
+ {
+	list-style: none;
+	font-size: 20px;
+	padding: 10px 10px 10px 10px;
+	text-indent: 500px;
+}
+
+.placeholder {
+	padding: 10px 10px 10px 10px;
+}
+
+.profile {
+	background-color: #E8D0A9;
+}
+
+.profilename {
+	font-size: 40px
+}
+
