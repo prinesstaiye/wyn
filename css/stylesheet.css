@@ -42,7 +42,8 @@
 	list-style: none;
 	font-size: 20px;
 	padding: 10px 10px 10px 10px;
-	text-indent: 500px;
+	text-indent:;
+	text-align: center;
 }
 
 .placeholder {
@@ -57,3 +58,14 @@
 	font-size: 40px
 }
 
+
+
+footer a, footer a:visited
+{
+	color: white;
+}
+
+footer a:hover {
+	font-weight: bold;
+	text-decoration: none;
+}
