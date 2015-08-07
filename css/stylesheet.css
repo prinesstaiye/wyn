@@ -37,13 +37,16 @@
 	max-width: 200px;
 }
 
-.li
- {
-	list-style: none;
+.profilestatsbox
+{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.profilestats
+{
 	font-size: 20px;
-	padding: 10px 10px 10px 10px;
-	text-indent:;
-	text-align: center;
+	padding: 10px;
 }
 
 .placeholder {
