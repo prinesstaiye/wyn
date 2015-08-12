@@ -12,7 +12,8 @@ $( document ).ready(function () {
 		user.set("email", $("#EmailUp").val() );
 		user.signUp (null, {
   			success: function(user) {
-    			console.log("Success!");
+    			alert("Success! You are ready to log in.");
+    			window.location.href = "index.html"; 
   			},
   			error: function(user, error) {
     		// Show the error message somewhere and let the user try again.

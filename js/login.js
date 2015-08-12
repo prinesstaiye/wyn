@@ -8,7 +8,7 @@ $( document ).ready(function () {
 	$("#Login").click(function() {
 		Parse.User.logIn($("#UsernameIn").val(), $("#PasswordIn").val(), {
 	  		success: function(user) {
-	    		alert("Success!");
+	    		window.location.replace("homepage.html");
 	  		},
 	  		error: function(user, error) {
 	    		alert("Error: " + error.code + " " + error.message); 
