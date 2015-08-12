@@ -88,3 +88,15 @@ footer a:hover {
 	border-bottom: 3px black solid;
 	text-align: center;
 }
+
+.button {
+	float: right;
+}
+
+.form {
+	width: 368px;
+}
+
+#cancel {
+	margin-bottom: 5px; 
+}
