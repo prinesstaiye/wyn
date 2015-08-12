@@ -5,6 +5,7 @@ $( document ).ready(function () {
 	testObject.save({foo: "bar"}).then(function(object) {
   		alert("yay! it worked");
 	});
+	
 	$("#SignUp").click(function(){
 		var user = new Parse.User();
 		user.set("username", $("#UsernameUp").val() );
@@ -22,3 +23,15 @@ $( document ).ready(function () {
   		});
 	});
 });
+function checkPass()
+{
+    //Store the password field objects into variables ...
+    var pass1 = document.getElementById('PasswordUp');
+    var pass2 = document.getElementById('ConfPasswordUp');
+    if(pass1.value == pass2.value){
+        //The passwords match. 
+        document.getElementById("SignUp").disabled = false;
+    }else{
+      document.getElementById("SignUp").disabled = true;
+    }
+}  
