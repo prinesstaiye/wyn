@@ -61,7 +61,8 @@
 }
 
 .profilename {
-	font-size: 40px
+	font-size: 40px;
+	padding-top: 5%;
 }
 
 
@@ -74,6 +75,7 @@ footer a, footer a:visited
 footer a:hover {
 	font-weight: bold;
 	text-decoration: none;
+	color: white;
 }
 
 .upload {
