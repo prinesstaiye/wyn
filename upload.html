@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+			<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 			<!-- Latest compiled and minified CSS -->
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
@@ -9,53 +9,11 @@
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
 			<!-- Latest compiled and minified JavaScript -->
+			<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+			<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-			<script src="http://www.parsecdn.com/js/parse-1.5.0.min.js"></script>
-
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-			
-			<script>
-				$(document).ready(function() {
-					var parse_app_id = "hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs";
-					var parse_javascript_id = "ALVDecc9XnfGQuCCO3rARwFxIOFSuRjyPkMuOHAp";
-					var parse_rest_id = "pz430bRRrl9ukk5sTYszqWntUqXixbZ4sh1zTBiE";
-					
-	    			Parse.initialize(parse_app_id, parse_javascript_id); // initialize the app
-
-	    			$('#fileselect').bind("change", function(e) {
-	                  var files = e.target.files || e.dataTransfer.files;
-	                  // Our file var now holds the selected file
-	                  file = files[0];
-	                });
-
-					$('#uploadbutton').click(function() {
-	                  var serverUrl = 'https://api.parse.com/1/files/' + file.name;
-
-	                 	$.ajax({
-		                    type: "POST",
-		                    beforeSend: function(request) {
-		                      request.setRequestHeader("X-Parse-Application-Id", parse_app_id);
-		                      request.setRequestHeader("X-Parse-REST-API-Key", parse_rest_id);
-		                      request.setRequestHeader("Content-Type", file.type);
-		                    },
-		                    url: serverUrl,
-		                    data: file,
-		                    processData: false,
-		                    contentType: false,
-		                    success: function(data) {
-			                   	var myimage = new Parse.Object("image_table");
-			                    myimage.set({imagetitle: data.name});
-			                    myimage.set({imageurl: data.url});
-			                    myimage.set({imagefile: {"name": data.name,"url": data.url,"__type": "File"}});
-			                    myimage.save();
-
-			                    document.getElementById("url").innerHTML = '<a href="' + data.url + '">'+ data.url + '</a>';
-		                    }
-	                	});
-	                });
-				});
-			</script>
-			
+			<script src="https://www.parsecdn.com/js/parse-1.5.0.min.js"></script>
+			<script src="js/upload.js"></script>
 	</head>
 	<body class = "upload">
 		 <div class="WYN"><h1>WYN</h1></div>
@@ -66,6 +24,7 @@
 <div class= "form">
 <p><input type="submit" name="cancel" value="X" class = "button" id ="cancel"></p> 
 <textarea rows="2" name="question" cols="50">What's your question?</textarea>
+<p><input type="file" id="Upload" accept="image/*"></p>
 <p><input type="submit" name="done" value="Post" class = "button"></p>
 </form></center>
 
