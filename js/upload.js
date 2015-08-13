@@ -5,7 +5,7 @@ $( document ).ready(function () {
 	testObject.save({foo: "bar"}).then(function(object) {
   		alert("yay! it worked");
 	});
-$("#Login").click (function (){	
+
 	var fileUploadControl = $("#Upload")[0];
 if (fileUploadControl.files.length > 0) {
   var file = fileUploadControl.files[0];
@@ -19,10 +19,10 @@ parseFile.save().then(function() {
 	alert("Error!");
   // The file either could not be read, or could not be saved to Parse.
 });
-
+$("#Login").click (function (){	
 	var Upload = new Parse.Object("Upload");
-	Upload.set("applicantName", "Joe Smith");
-	Upload.set("applicantResumeFile", parseFile);
+	Upload.set("Username", Parse.User.current());
+	Upload.set("Photo", parseFile);
 	Upload.save();
 });
 });
