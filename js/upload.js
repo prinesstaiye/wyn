@@ -5,24 +5,45 @@ $( document ).ready(function () {
 	testObject.save({foo: "bar"}).then(function(object) {
   		alert("yay! it worked");
 	});
+$("#Post").click(function() {
+	  function saveJobApp(objParseFile)
+  {
+     var jobApplication = new Parse.Object("JobApplication");
+     jobApplication.set("applicantName", "Joe Smith");
+     jobApplication.set("profileImg", objParseFile);
+     jobApplication.save(null, 
+     {
+        success: function(gameScore) {
+          // Execute any logic that should take place after the object is saved.
+          var photo = gameScore.get("profileImg");
+          $("#profileImg")[0].src = photo.url();
+        },
+        error: function(gameScore, error) {
+          // Execute any logic that should take place if the save fails.
+          // error is a Parse.Error with an error code and description.
+          alert('Failed to create new object, with error code: ' + error.description);
+        }
+     });
+  }
 
-	var fileUploadControl = $("#Upload")[0];
-if (fileUploadControl.files.length > 0) {
-  var file = fileUploadControl.files[0];
-  var name = "photo.jpg";
+   
+  	$('#Upload').bind("change", function(e) {
+         var fileUploadControl = $("#Upload")[0];
+         var file = fileUploadControl.files[0];
+         var name = file.name; //This does *NOT* need to be a unique name
+         var parseFile = new Parse.File(name, file);
 
-  var parseFile = new Parse.File(name, file);
-}
-parseFile.save().then(function() {
-  alert("File has been saved!");
-}, function(error) {
-	alert("Error!");
-  // The file either could not be read, or could not be saved to Parse.
-});
-$("#Login").click (function (){	
-	var Upload = new Parse.Object("Upload");
-	Upload.set("Username", Parse.User.current());
-	Upload.set("Photo", parseFile);
-	Upload.save();
+         parseFile.save().then
+         (
+           function() 
+           {
+               saveJobApp(parseFile);
+           }, 
+           function(error) 
+           {
+             alert("error");
+           }
+         );
+  }); 
 });
 });
