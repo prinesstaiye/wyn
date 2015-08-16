@@ -13,6 +13,7 @@
 			<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 			<script src="https://www.parsecdn.com/js/parse-1.5.0.min.js"></script>
+			<script src="cordova.js"></script>
 			<script src="js/upload.js"></script>
 
 	</head>
@@ -21,8 +22,7 @@
 		 <p>&nbsp</p>
 		 
 <center>
-<p> <input type="file" id="profilePhotoFileUpload" accept="image/x-png, image/gif, image/jpeg"/>
-<p> <button id="Post">Post</button></p>
+<p> <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">Choose Photod</button><p> <button id="Post">Post</button></p>
 </center>
 
 
