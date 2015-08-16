@@ -1,0 +1,104 @@
+.input-group {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.index {
+	background-color: #E8D0A9;
+	text-align: center;
+}
+
+.checkmark {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.homepage {
+	background-color: #E8D0A9;
+	text-align: center;
+}
+
+.site-footer {
+	background-color: #000;
+	text-align: center;
+	color: #fff;
+	font-size: 30px;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	margin-left: 0px;
+}
+
+.glyphicon {
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.wynlogo
+{
+	width: 100%;
+	min-width: 50px;
+	max-width: 200px;
+}
+
+.indexlogo
+{
+	width: 100%;
+	min-width: 75px;
+	max-width: 300px;
+}
+
+.profilestatsbox
+{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.profilestats
+{
+	font-size: 20px;
+	padding: 2%;
+}
+
+.profile {
+	background-color: #E8D0A9;
+}
+
+#username {
+	font-size: 40px;
+	padding-top: 5%;
+}
+
+
+
+footer a, footer a:visited
+{
+	color: white;
+}
+
+footer a:hover {
+	font-weight: bold;
+	text-decoration: none;
+	color: white;
+}
+
+.upload {
+	background-color: #E8D0A9;
+}
+
+.WYN {
+	border-bottom: 3px black solid;
+	text-align: center;
+}
+
+.button {
+	float: right;
+}
+
+.form {
+	width: 368px;
+}
+
+#cancel {
+	margin-bottom: 5px; 
+}
