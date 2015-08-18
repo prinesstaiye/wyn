@@ -20,10 +20,11 @@
      jobApplication.set("Username", "Joe Smith");
      jobApplication.set("Photo", objParseFile);
      jobApplication.save();
+     location.reload();
          },
            function(error)
            {
-             alert("error");
+             alert("error:" + JSON.stringify(error));
            });
        });
   });
