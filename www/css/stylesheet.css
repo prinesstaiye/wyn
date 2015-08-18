@@ -102,3 +102,8 @@ footer a:hover {
 #cancel {
 	margin-bottom: 5px; 
 }
+
+#QuestionText {
+	margin-left: auto;
+	margin-right: auto;
+}

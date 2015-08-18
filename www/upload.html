@@ -11,23 +11,21 @@
 			<!-- Latest compiled and minified JavaScript -->
 			<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 			<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 			<script src="https://www.parsecdn.com/js/parse-1.5.0.min.js"></script>
-			<script src="cordova.js"></script>
 			<script src="js/upload.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 	</head>
 	<body class = "upload">
 		 <div class="WYN"><h1>WYN</h1></div>
 		 <p>&nbsp</p>
-		 
+<form>
 <center>
-<p> <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">Choose Photos</button><p> <button id="Post">Post Your Question!</button></p>
+<p> <input type="text" class="form-control" id="QuestionText" placeholder="What is your Question?"> </p>
+<p> <input type="file" id="Upload" accept="image/*"></p> 
+<p> <button type="submit" id="Post">Post Your Question!</button></p>
 </center>
-
-
-</div>
-
+</form>
 
 		<footer class="site-footer">
 		<a href="homepage.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>|  
