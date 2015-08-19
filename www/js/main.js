@@ -48,14 +48,15 @@ console.log(currentUser)
  		for (var i=0; i<results.length; i++) {
  			var post = results[i];
  			var question = post.get("Question");
-			var photo = post.get("Photo");
+			var photo = post.get("Photo").url();
  			console.log(question);
- 			var $img = $("<div> </div>").addClass("img");
+ 			var $img = $("<img src = "+photo+" />").addClass("img");
  			var $question = $("<div> </div>").addClass("question").text(question);
  			var $li = $("<li> </li>").addClass( "pane" + i);
- 			$li.append($question)
+ 			$li.append($img);
+ 			$li.append($question);
  			$("#Posts").append($li);
-
+ 			console.log(photo);
  		}
  	},
  	error:function(error){
