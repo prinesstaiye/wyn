@@ -9,14 +9,14 @@
   $('#Post').bind("click", function(e) {
         var fileUploadControl = $("#Upload")[0];
          var file = fileUploadControl.files[0];
-         var name = file.name; //This does *NOT* need to be a unique name
+         var name =  new Date().getTime() + ".jpg"; //This does *NOT* need to be a unique name
          var parseFile = new Parse.File(name, file);
             
 
          parseFile.save().then(function saveJobApp (objParseFile) {
 
      var jobApplication = new Parse.Object("Upload");
-     jobApplication.set("Question", $("#QuestionText").val())
+     jobApplication.set("Question", $("#QuestionText").val());
      jobApplication.set("Username", "Joe Smith");
      jobApplication.set("Photo", objParseFile);
      jobApplication.save();
