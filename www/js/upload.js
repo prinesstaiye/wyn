@@ -15,9 +15,10 @@
 
          parseFile.save().then(function saveJobApp (objParseFile) {
 
+var currentUser = Parse.User.current();
      var jobApplication = new Parse.Object("Upload");
      jobApplication.set("Question", $("#QuestionText").val());
-     jobApplication.set("Username", "Joe Smith");
+     jobApplication.set("Username", String(currentUser));
      jobApplication.set("Photo", objParseFile);
      jobApplication.save();
      location.reload();

@@ -40,6 +40,8 @@ var findPost = new Parse.Query("Upload");
 //                 </li>
 
 var currentUser = Parse.User.current();
+console.log(currentUser)
+
  findPost.notEqualTo("Username", String(currentUser));
  findPost.find({
  	success:function(results){
