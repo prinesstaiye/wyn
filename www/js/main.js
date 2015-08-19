@@ -31,7 +31,6 @@ $('.actions .like, .actions .dislike').click(function(e){
 
 var posts = Parse.Object.extend("Upload");
 var findPost = new Parse.Query("Upload");
-var currentUser = Parse.User.current();
 
 // <li class="pane1">
 //                     <div class="img"></div>
@@ -40,9 +39,8 @@ var currentUser = Parse.User.current();
 //                     <div class="dislike"></div>
 //                 </li>
 
-console.log(currentUser);
-
- //findPost.EqualTo("Username","Joe Smith")
+var currentUser = Parse.User.current();
+ findPost.notEqualTo("Username", String(currentUser));
  findPost.find({
  	success:function(results){
  		for (var i=0; i<results.length; i++) {
