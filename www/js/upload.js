@@ -5,7 +5,6 @@
     testObject.save({foo: "bar"}).then(function(object) {
         alert("yay! it worked");
     });
-
   $('#Post').bind("click", function(e) {
         var fileUploadControl = $("#Upload")[0];
          var file = fileUploadControl.files[0];
@@ -15,10 +14,10 @@
 
          parseFile.save().then(function saveJobApp (objParseFile) {
 
-var currentUser = Parse.User.current();
+
      var jobApplication = new Parse.Object("Upload");
      jobApplication.set("Question", $("#QuestionText").val());
-     jobApplication.set("Username", String(currentUser));
+     jobApplication.set("Username", JSON.stringify(Parse.User.current()));
      jobApplication.set("Photo", objParseFile);
      jobApplication.save();
      location.reload();
