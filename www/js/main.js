@@ -40,7 +40,7 @@ var findPost = new Parse.Query("Upload");
 //                 </li>
 
 var currentUser = Parse.User.current();
-console.log(currentUser)
+console.log(currentUser);
 
  findPost.notEqualTo("Username", String(currentUser));
  findPost.find({
@@ -49,14 +49,12 @@ console.log(currentUser)
  			var post = results[i];
  			var question = post.get("Question");
 			var photo = post.get("Photo").url();
- 			console.log(question);
- 			var $img = $("<img src = "+photo+" />").addClass("img");
+ 			var $img = $("<div style = 'background-image:url("+photo+");  background-size: 100% 100%; background-repeat: no-repeat;'> </div>").addClass("img");
  			var $question = $("<div> </div>").addClass("question").text(question);
- 			var $li = $("<li> </li>").addClass( "pane" + i);
+ 			var $li = $("<li> </li>").addClass( "pane"+ i );
  			$li.append($img);
  			$li.append($question);
  			$("#Posts").append($li);
- 			console.log(photo);
  		}
  	},
  	error:function(error){
