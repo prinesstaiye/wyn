@@ -1,3 +1,5 @@
+$( document ).ready(function () {
+Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3rARwFxIOFSuRjyPkMuOHAp");
 /**
  * jTinder initialization
  */
@@ -24,5 +26,40 @@ $("#tinderslide").jTinder({
  */
 $('.actions .like, .actions .dislike').click(function(e){
 	e.preventDefault();
-	$("#tinderslide").jTinder($(this).attr('class'));
+	$("#tinderslide").jTinder($(this).attr('class', "unique"));
+});
+
+var posts = Parse.Object.extend("Upload");
+var findPost = new Parse.Query("Upload");
+var currentUser = Parse.User.current();
+
+// <li class="pane1">
+//                     <div class="img"></div>
+//                     <div>Placeholder</div>
+//                     <div class="like"></div>
+//                     <div class="dislike"></div>
+//                 </li>
+
+console.log(currentUser);
+
+ //findPost.EqualTo("Username","Joe Smith")
+ findPost.find({
+ 	success:function(results){
+ 		for (var i=0; i<results.length; i++) {
+ 			var post = results[i];
+ 			var question = post.get("Question");
+			var photo = post.get("Photo");
+ 			console.log(question);
+ 			var $img = $("<div> </div>").addClass("img");
+ 			var $question = $("<div> </div>").addClass("question").text(question);
+ 			var $li = $("<li> </li>").addClass( "pane" + i);
+ 			$li.append($question)
+ 			$("#Posts").append($li);
+
+ 		}
+ 	},
+ 	error:function(error){
+ 		console.log("Error: " + error.code + " " + error.message);
+ 		}
+ })
 });
