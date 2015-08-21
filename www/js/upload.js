@@ -5,7 +5,7 @@
          var file = fileUploadControl.files[0];
          var name =  new Date().getTime() + ".jpg"; //This does *NOT* need to be a unique name
          var parseFile = new Parse.File(name, file);
-            
+
 
          parseFile.save().then(function saveJobApp (objParseFile) {
 
