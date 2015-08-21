@@ -14,13 +14,13 @@
 }
 
 .homepage {
-	
+
 	text-align: center;
 }
 
 .site-footer {
-	border-top: 2px black solid;
-	background-color: #351c53;
+	border-top: 2px #263961 solid;
+	background-color: #3B5998;
 	text-align: center;
 	color: #fff;
 	font-size: 30px;
@@ -33,6 +33,7 @@
 .glyphicon {
 	padding-left: 10%;
 	padding-right: 10%;
+	color: #263961;
 }
 
 .wynlogo
@@ -80,8 +81,8 @@ footer a:hover {
 }
 
 .WYN {
-	border-bottom: 2px black solid;
-	background-color: #351c53;
+	border-bottom: 2px #263961 solid;
+	background-color: #3B5998;
 	text-align: center;
 	color: white;
 	position: fixed;
@@ -100,7 +101,7 @@ footer a:hover {
 }
 
 #cancel {
-	margin-bottom: 5px; 
+	margin-bottom: 5px;
 }
 
 #QuestionText {
