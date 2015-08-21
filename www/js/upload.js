@@ -12,7 +12,7 @@
 
      var jobApplication = new Parse.Object("Upload");
      jobApplication.set("Question", $("#QuestionText").val());
-     jobApplication.set("Username", JSON.stringify(Parse.User.current()));
+     jobApplication.set("Username", Parse.User.current().getUsername());
      jobApplication.set("Photo", objParseFile);
      jobApplication.save();
      location.reload();

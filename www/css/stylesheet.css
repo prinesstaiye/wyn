@@ -112,3 +112,12 @@ footer a:hover {
 .signuplink {
 	color: white;
 }
+
+.question {
+    position: absolute;
+    bottom: 0;
+    background-color: #fff;
+    width: 100%;
+    margin: 0px 10px 0px 5px;
+    left: -5px;
+}
