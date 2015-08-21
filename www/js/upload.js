@@ -15,6 +15,7 @@
      jobApplication.set("Username", Parse.User.current().getUsername());
      jobApplication.set("Photo", objParseFile);
      jobApplication.save();
+     alert("Success! You may check your results on your profile page!")
      location.reload();
          },
            function(error)
