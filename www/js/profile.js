@@ -20,14 +20,14 @@ findPost.find({
      var post = results[i];
      var question = post.get("Question");
      var photo = post.get("Photo").url();
-     // var $img = $("img src="("+photo)".addClass("img")));
+     var $img = $("<img src="+photo+">");
      var $question = $("<div> </div>").addClass("quests").text(question);
      var $li = $("<li> </li>").addClass( "Questions"+ i );
-     // $li.append($img);
-     // $li.css("image", "url("+photo+")");
-     //$li.css("height", "10%");
-     //$li.css("width", "10%");
-     $li.css("padding", "5%");
+     $li.append($img);
+     //$li.css("image", "url("+photo+")");
+     $img.css("height", "20%");
+     $img.css("width", "20%");
+     // $li.css("padding", "5%");
      $li.append($question);
      $("#quesults").append($li);
    }
