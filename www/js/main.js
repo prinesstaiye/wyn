@@ -47,7 +47,7 @@ var currentUser = Parse.User.current();
 			// dislike callback
 		    onDislike: function (item) {
 			    // set the status text
-		       //saving dislike 
+		       //saving dislike
 		    },
 			// like callback
 		    onLike: function (item) {
