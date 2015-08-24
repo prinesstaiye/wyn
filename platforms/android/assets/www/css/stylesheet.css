@@ -1,0 +1,125 @@
+.input-group {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.index {
+	background-image: url("../img/background.png");
+	text-align: center;
+}
+
+.checkmark {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.homepage {
+
+	text-align: center;
+}
+
+.site-footer {
+	border-top: 2px #263961 solid;
+	background-color: #3B5998;
+	text-align: center;
+	color: #fff;
+	font-size: 30px;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	margin-left: 0px;
+}
+
+.glyphicon {
+	padding-left: 10%;
+	padding-right: 10%;
+	color: #263961;
+}
+
+.wynlogo
+{
+	width: 100%;
+	min-width: 50px;
+	max-width: 200px;
+}
+
+.indexlogo
+{
+	width: 100%;
+	min-width: 75px;
+	max-width: 300px;
+}
+
+.profilestatsbox
+{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.profilestats
+{
+	font-size: 20px;
+	padding: 2%;
+}
+
+#username {
+	font-size: 40px;
+	padding-top: 5%;
+}
+
+
+
+footer a, footer a:visited
+{
+	color: white;
+}
+
+footer a:hover {
+	font-weight: bold;
+	text-decoration: none;
+	color: white;
+}
+
+.WYN {
+	border-bottom: 2px #263961 solid;
+	background-color: #3B5998;
+	text-align: center;
+	color: white;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	margin-left: 0px;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+.button {
+	float: right;
+}
+
+.form {
+	width: 368px;
+}
+
+#cancel {
+	margin-bottom: 5px;
+}
+
+#QuestionText {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.signuplink {
+	color: white;
+}
+
+.question {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 0px 10px 0px 5px;
+    left: -5px;
+		-webkit-text-stroke: 1px white;
+    font-size: 30px;
+    font-weight: 500;
+}
