@@ -26,24 +26,16 @@
   });
 */
 
-$( '#Upload' ).bind( 'touchstart', function() {
-$( this ).attr( 'src', 'assets/roll.down.png' );
-
-navigator.camera.getPicture( function( data ) {
-  $( '#photo' )
-    .attr( 'src', 'data:image/jpeg;base64,' + data )
-    .css( 'visibility', 'visible' );
-
-  $( '#roll' ).attr( 'src', 'assets/roll.up.png' );
-}, function( error ) {
-  console.log( 'Error' );
-}, {
-  destinationType: Camera.DestinationType.DATA_URL,
-  sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
-  allowEdit: false,
-  targetWidth: 260,
-  targetHeight: 435,
-  mediaType: Camera.MediaType.PICTURE
-} );
-} );
+function getImage() {
+                   navigator.camera.getPicture(onSuccess, onFailure, {
+   destinationType: navigator.camera.DestinationType.FILE_URI,
+   sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+          });
+          function onSuccess(imageURI) {
+                       alert("Image location is:"+ imageURI);
+         }
+         function onFailure(message) {
+                       alert("Get image failed: " + message);
+        }
+}
 });
