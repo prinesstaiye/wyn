@@ -47,11 +47,6 @@ function onPhotoDataSuccess(imageURI)
     movePic(imageURI);
 }
 
-function onFail(message)
-{
-    alert('Failed because: ' + message);
-}
-
 function movePic(file)
 {
     window.resolveLocalFileSystemURI(file, resolveOnSuccess, resOnError);
@@ -84,12 +79,6 @@ function successMove(entry)
 function resOnError(error)
 {
     alert(error.code);
-}
-
-function capturePhotoEdit()
-{
-    navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true,
-    destinationType: destinationType.DATA_URL });
 }
 
 function getPhoto(source)
