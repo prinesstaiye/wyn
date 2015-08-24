@@ -1,6 +1,6 @@
  $( document ).ready(function () {
     Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3rARwFxIOFSuRjyPkMuOHAp");
-  $('#Post').bind("click", function(e) {
+  /* $('#Post').bind("click", function(e) {
         var fileUploadControl = $("#Upload")[0];
          var file = fileUploadControl.files[0];
          var name =  new Date().getTime() + ".jpg"; //This does *NOT* need to be a unique name
@@ -24,3 +24,26 @@
            });
        });
   });
+*/
+
+$( '#Upload' ).bind( 'touchstart', function() {
+$( this ).attr( 'src', 'assets/roll.down.png' );
+
+navigator.camera.getPicture( function( data ) {
+  $( '#photo' )
+    .attr( 'src', 'data:image/jpeg;base64,' + data )
+    .css( 'visibility', 'visible' );
+
+  $( '#roll' ).attr( 'src', 'assets/roll.up.png' );
+}, function( error ) {
+  console.log( 'Error' );
+}, {
+  destinationType: Camera.DestinationType.DATA_URL,
+  sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+  allowEdit: false,
+  targetWidth: 260,
+  targetHeight: 435,
+  mediaType: Camera.MediaType.PICTURE
+} );
+} );
+});
