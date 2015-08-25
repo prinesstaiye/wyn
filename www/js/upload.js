@@ -19,7 +19,7 @@
         sourceType: source });
     }
 
-  $('#Post').bind("click", function(e) {
+  /*$('#Post').bind("click", function(e) {
         var fileUploadControl = $("#Upload")[0];
          var file = fileUploadControl.files[0];
          var name =  new Date().getTime() + ".jpg"; //This does *NOT* need to be a unique name
@@ -41,7 +41,7 @@
            {
              alert("error:" + JSON.stringify(error));
            });
-       });
+       });*/
 
 
 
