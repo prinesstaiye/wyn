@@ -28,14 +28,14 @@ function onDeviceReady()
     destinationType=navigator.camera.DestinationType;
 }
 
-
+$("#SignUp").click(function(){
 function getPhoto(source) {
   // Retrieve image file location from specified source
   navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
     destinationType: destinationType.FILE_URI,
-    sourceType: source });
+    sourceType: Camera.PictureSourceType.PHOTOLIBRARY });
 }
-
+});
 </script>
 
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -50,7 +50,7 @@ function getPhoto(source) {
 <center>
 <p> <input type="text" class="form-control" id="QuestionText" placeholder="What is your Question?"> </p>
 <p>
-<button onclick="getPhoto(pictureSource.PHOTOLIBRARY);" id="Upload">From Gallery!!</button></p>
+<button id="Upload">From Gallery!!</button></p>
 <p> <button id="Post">Post Your Question!</button></p>
 </center>
 
