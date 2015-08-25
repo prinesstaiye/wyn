@@ -25,12 +25,12 @@ findPost.find({
      var $li = $("<li> </li>").addClass( "Questions"+ i );
      var $way = $("<p>Ways: 0<p>");
      var $noway = $("<p>No Ways: 20<p>");
+     $li.append($question);
      $li.append($img);
      //$li.css("image", "url("+photo+")");
      $img.css("height", "20%");
      $img.css("width", "20%");
      // $li.css("padding", "5%");
-     $li.append($question);
      $li.append($way);
      $li.append($noway);
      $("#quesults").append($li);
