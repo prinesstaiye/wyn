@@ -39,20 +39,6 @@
 
 		       // Get image handle
 		       //
-		       var smallImage = document.getElementById('smallImage');
-
-		       // Unhide image elements
-		       //
-		       smallImage.style.display = 'block';
-
-		       // Show the captured photo
-		       // The inline CSS rules are used to resize the image
-		       //
-		       smallImage.src = "data:image/jpeg;base64," + imageData;
-		     }
-
-		     // Called when a photo is successfully retrieved
-		     //
 		     function onPhotoURISuccess(imageURI) {
 		       // Uncomment to view the image file URI
 		       // console.log(imageURI);
@@ -121,7 +107,6 @@
 <p>
 <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);" id="Upload">From Photo Library</button></p>
 <p> <button id="Post">Post Your Question!</button></p>
-<img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
     <img style="display:none;" id="largeImage" src="" />
 </center>
 
