@@ -16,8 +16,7 @@
 			<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 		<!--  <script type="text/javascript" charset="utf-8" src="js/upload.js"></script> -->
 			<script type="text/javascript" charset="utf-8">
-			$( document ).ready(function () {
- 			 Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3rARwFxIOFSuRjyPkMuOHAp");
+
 			var pictureSource;   // picture source
 		 var destinationType; // sets the format of returned value
 
@@ -102,9 +101,10 @@
 		 function onFail(message) {
 			 alert('Failed because: ' + message);
 		 }
-
+		 $( document ).ready(function () {
+			 Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3rARwFxIOFSuRjyPkMuOHAp");
 			 $('#Post').bind("click", function(e) {
-						 var fileUploadControl = $("largeImage")[0];
+						 var fileUploadControl = $("#largeImage")[0];
 							var file = fileUploadControl.files[0];
 							var name =  new Date().getTime() + ".jpg"; //This does *NOT* need to be a unique name
 							var parseFile = new Parse.File(name, file);
