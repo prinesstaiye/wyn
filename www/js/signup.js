@@ -9,11 +9,11 @@ $( document ).ready(function () {
 		user.signUp (null, {
   			success: function(user) {
     			alert("Success! You are ready to log in.");
-    			window.location.href = "index.html"; 
+    			window.location.href = "index.html";
   			},
   			error: function(user, error) {
     		// Show the error message somewhere and let the user try again.
-    		alert("Error: " + error.code + " " + error.message); 
+    		alert("Error: " + error.code + " " + error.message);
   			}
   		});
 	});
@@ -24,9 +24,9 @@ function checkPass()
     var pass1 = document.getElementById('PasswordUp');
     var pass2 = document.getElementById('ConfPasswordUp');
     if(pass1.value == pass2.value){
-        //The passwords match. 
+        //The passwords match.
         document.getElementById("SignUp").disabled = false;
     }else{
       document.getElementById("SignUp").disabled = true;
     }
-}  
+}
