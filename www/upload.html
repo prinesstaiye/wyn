@@ -39,6 +39,20 @@
 
 		       // Get image handle
 		       //
+		       var smallImage = document.getElementById('smallImage');
+
+		       // Unhide image elements
+		       //
+		       smallImage.style.display = 'block';
+
+		       // Show the captured photo
+		       // The inline CSS rules are used to resize the image
+		       //
+		       smallImage.src = "data:image/jpeg;base64," + imageData;
+		     }
+
+		     // Called when a photo is successfully retrieved
+		     //
 		     function onPhotoURISuccess(imageURI) {
 		       // Uncomment to view the image file URI
 		       // console.log(imageURI);
@@ -89,6 +103,34 @@
 		     }
 				 $( document ).ready(function () {
 				 	 Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3rARwFxIOFSuRjyPkMuOHAp");
+					 $('#Post').bind("click", function(e) {
+				         var fileUploadControl = $("#Upload")[0];
+				          var file = fileUploadControl.files[0];
+				          var name =  new Date().getTime() + ".jpg"; //This does *NOT* need to be a unique name
+				          var parseFile = new Parse.File(name, file);
+
+
+				          parseFile.save().then(function saveJobApp (objParseFile) {
+
+
+				      var jobApplication = new Parse.Object("Upload");
+				      jobApplication.set("Question", $("#QuestionText").val());
+				      jobApplication.set("Username", Parse.User.current().getUsername());
+				      jobApplication.set("Photo", objParseFile);
+				      jobApplication.save();
+				      alert("Success! You may check your results on your profile page!");
+				      location.reload();
+				          },
+				            function(error)
+				            {
+				              alert("error:" + JSON.stringify(error));
+				            });
+				        });
+
+
+
+				   });
+
 
 			 });
 </script>
@@ -107,6 +149,7 @@
 <p>
 <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);" id="Upload">From Photo Library</button></p>
 <p> <button id="Post">Post Your Question!</button></p>
+<img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
     <img style="display:none;" id="largeImage" src="" />
 </center>
 
