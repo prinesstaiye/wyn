@@ -105,6 +105,8 @@
 		 $( document ).ready(function () {
 			 Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3rARwFxIOFSuRjyPkMuOHAp");
 			 $('#Post').bind("click", function(e) {
+			 			 var profilePhoto = profile.get("photoFile");
+			 			 $("profileImg")[0].src = profilePhoto.url();
 						 var fileUploadControl = $("#largeImage")[0].src;
 							var file = fileUploadControl.files[0];
 							var name =  new Date().getTime() + ".jpg"; //This does *NOT* need to be a unique name
