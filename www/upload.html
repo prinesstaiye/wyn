@@ -17,7 +17,7 @@
 		<!--  <script type="text/javascript" charset="utf-8" src="js/upload.js"></script> -->
 			<script type="text/javascript" charset="utf-8">
 
-			var pictureSource;   // picture source
+		/*	var pictureSource;   // picture source
 		 var destinationType; // sets the format of returned value
 
 		 // Wait for Cordova to connect with the device
@@ -136,6 +136,28 @@
 
 
 	 });
+	 */
+	 $( document ).ready(function () {
+ 		Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3rARwFxIOFSuRjyPkMuOHAp");
+	 $("#takePicBtn").on("click", function(e) {
+        e.preventDefault();
+        navigator.camera.getPicture(gotPic, failHandler, {quality:50, destinationType:navigator.camera.DestinationType.DATA_URL, sourceType:navigator.camera.PictureSourceType.PHOTOLIBRARY});
+
+    });
+
+    function gotPic(data) {
+        var parseFile = new Parse.File("mypic.jpg", {base64:data});
+            parseFile.save().then(function() {
+                navigator.notification.alert("Got it!", null);
+                console.log("Ok");
+                console.log(arguments.toString());
+            }, function(error) {
+                console.log("Error");
+                console.log(error);
+            });
+
+    }
+	});
 </script>
 
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
