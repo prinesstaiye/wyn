@@ -28,7 +28,7 @@
 
 
 
-  });*/
+  });
   var pictureSource;
   var destinationType;
 
@@ -47,3 +47,51 @@
       destinationType: destinationType.FILE_URI,
       sourceType: source });
   }
+*/
+Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3rARwFxIOFSuRjyPkMuOHAp");
+
+			/*$(document).ready(function(e, ui) {
+
+		var imagedata = "";
+				if(imagedata !== "") {
+					var parseFile = new Parse.File("pic.jpg", {base64:imagedata});
+					console.log(parseFile);
+						parseFile.save().then(function() {
+							var note = new Parse.Object.extend("Upload");
+							note.set("Username", Parse.User.current().getUsername());
+							note.set("Question", $("#QuestionText").val());
+							note.set("Photo",parseFile);
+							note.save(null, {
+								success:function(ob) {
+									alert("success");
+								}, error:function(e) {
+									console.log("Oh crap", e);
+	                alert("error");
+								}
+							});
+
+						}, function(error) {
+							alert("Error");
+							console.log(error);
+						});
+
+				}
+*/
+var imagedata = "";
+			$( "#Upload" ).click(function(e) {
+				e.preventDefault();
+				navigator.camera.getPicture(gotPic, failHandler,
+					{quality:50, destinationType:navigator.camera.DestinationType.DATA_URL,
+					 sourceType:navigator.camera.PictureSourceType.PHOTOLIBRARY});
+			});
+
+	function gotPic(data) {
+	console.log('got here');
+	imagedata = data;
+	}
+
+	function failHandler(e) {
+	alert("ErrorFromC");
+	alert(e);
+	console.log(e.toString());
+	}
