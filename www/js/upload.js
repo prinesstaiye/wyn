@@ -50,6 +50,14 @@
 */
 Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3rARwFxIOFSuRjyPkMuOHAp");
 
+
+$( "#Upload" ).click(function() { function getPhoto(source) {
+  // Retrieve image file location from specified source
+  navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+    destinationType: destinationType.FILE_URI,
+    sourceType: source });
+}
+});
 			/*$(document).ready(function(e, ui) {
 
 		var imagedata = "";
@@ -77,7 +85,7 @@ Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3
 
 				}
 */
-var imagedata = "";
+/* var imagedata = "";
 			$( "#Upload" ).click(function(e) {
 				e.preventDefault();
 				navigator.camera.getPicture(gotPic, failHandler,
@@ -94,4 +102,4 @@ var imagedata = "";
 	alert("ErrorFromC");
 	alert(e);
 	console.log(e.toString());
-	}
+} */
