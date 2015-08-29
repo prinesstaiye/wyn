@@ -19,7 +19,7 @@
 
 Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3rARwFxIOFSuRjyPkMuOHAp");
 
-			$(document).ready(function(e, ui) {
+			/*$(document).ready(function(e, ui) {
 
 		var imagedata = "";
 				if(imagedata !== "") {
@@ -45,8 +45,8 @@ Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3
 						});
 
 				}
-
-
+*/
+var imagedata = "";
 			$("#Upload").on("click", function(e) {
 				e.preventDefault();
 				navigator.camera.getPicture(gotPic, failHandler,
@@ -64,7 +64,7 @@ Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3
 	alert(e);
 	console.log(e.toString());
 	}
-	});
+
 </script>
 
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -79,7 +79,7 @@ Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3
 <center>
 <p> <input type="text" class="form-control" id="QuestionText" placeholder="What is your Question?"> </p>
 <p>
-<button id="Upload">From Photo Library</button></p>
+<button id="Upload">Upload</button></p>
 <p> <button id="saveNoteBtn">Post Your Question!</button></p>
 <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
     <img style="display:none;" id="largeImage" src="" />
