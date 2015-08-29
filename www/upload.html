@@ -47,7 +47,7 @@ Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3
 				}
 */
 var imagedata = "";
-			$("#Upload").on("click", function(e) {
+			$( "#Upload" ).click(function(e) {
 				e.preventDefault();
 				navigator.camera.getPicture(gotPic, failHandler,
 					{quality:50, destinationType:navigator.camera.DestinationType.DATA_URL,
