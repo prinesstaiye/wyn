@@ -109,3 +109,14 @@ Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3
 			 	alert("You must add a picture!");
 			 }
 		 });
+
+		 function gotPic(data) {
+	 console.log('got here');
+	 imagedata = data;
+ }
+
+ function failHandler(e) {
+	 alert("ErrorFromC");
+	 alert(e);
+	 console.log(e.toString());
+ }
