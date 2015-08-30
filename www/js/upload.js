@@ -88,7 +88,7 @@ Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3
 		 	var imagedata = "";
 			var noteText = $("#QuestionText").val();
 
-
+ $('#Post').bind("click", function(e) {
 		 if(imagedata != "") {
 	 var parseFile = new Parse.File("mypic.jpg", {base64:imagedata});
 	 console.log(parseFile);
@@ -108,3 +108,4 @@ Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3
 			 else {
 			 	alert("You must add a picture!");
 			 }
+		 });
