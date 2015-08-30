@@ -1,4 +1,4 @@
- $(document).ready(function() {
+ // $(document).ready(function() {
 Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3rARwFxIOFSuRjyPkMuOHAp");
 			/* var pictureSource;   // picture source
 		 var destinationType; // sets the format of returned value
@@ -141,4 +141,3 @@ var parseFile = new Parse.File("mypic.jpg", {base64:data});
 				console.log(error);
 		});
 }
-});
