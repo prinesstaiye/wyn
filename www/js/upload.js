@@ -1,5 +1,6 @@
+ $(document).ready(function() {
 Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3rARwFxIOFSuRjyPkMuOHAp");
-			var pictureSource;   // picture source
+			/* var pictureSource;   // picture source
 		 var destinationType; // sets the format of returned value
 
 		 // Wait for Cordova to connect with the device
@@ -119,4 +120,25 @@ Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3
 	 alert("ErrorFromC");
 	 alert(e);
 	 console.log(e.toString());
- }
+ } */
+
+
+
+ $("#Upload").on("click", function(e) {
+e.preventDefault();
+navigator.camera.getPicture(gotPic, failHandler, {quality:50, destinationType:navigator.camera.DestinationType.DATA_URL, sourceType:navigator.camera.PictureSourceType.PHOTOLIBRARY});
+
+});
+
+function gotPic(data) {
+var parseFile = new Parse.File("mypic.jpg", {base64:data});
+		parseFile.save().then(function() {
+				navigator.notification.alert("Got it!", null);
+				console.log("Ok");
+				console.log(arguments.toString());
+		}, function(error) {
+				console.log("Error");
+				console.log(error);
+		});
+}
+});
