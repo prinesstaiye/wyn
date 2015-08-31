@@ -18,22 +18,33 @@ findPost.find({
  success:function(results){
    for (var i=0; i<results.length; i++) {
      var post = results[i];
-     var question = post.get("Question");
-     var photo = post.get("Photo").url();
-     var $img = $("<img src="+photo+">");
-     var $question = $("<div> </div>").addClass("quests").text(question);
-     var $li = $("<li> </li>").addClass( "Questions"+ i );
-     var $way = $("<p>Ways: 0<p>");
-     var $noway = $("<p>No Ways: 20<p>");
-     $li.append($question);
-     $li.append($img);
-     //$li.css("image", "url("+photo+")");
-     $img.css("height", "20%");
-     $img.css("width", "20%");
-     // $li.css("padding", "5%");
-     $li.append($way);
-     $li.append($noway);
-     $("#quesults").append($li);
+
+    var like = new Parse.Query("Results");
+    like.equalTo("Question",post);
+    var likePromise = like.find();
+
+    likePromise.then(function (results ) {
+        var groupedResults = _.groupBy(results, function(result) {return result.get("Like");});
+         var question = post.get("Question");
+         var photo = post.get("Photo").url();
+         var $img = $("<img src="+photo+">");
+         var $question = $("<div> </div>").addClass("quests").text(question);
+         var $li = $("<li> </li>").addClass( "Questions"+ i );
+         var liked = !groupedResults["true"]  ? 0: groupedResults["true"].length;
+         var disliked = !groupedResults["false"]  ? 0: groupedResults["false"].length;
+         var $way = $("<p>Ways: " + liked + "<p>");
+         var $noway = $("<p>No Ways: " + disliked + "<p>");
+         $li.append($question);
+         $li.append($img);
+         //$li.css("image", "url("+photo+")");
+         
+         $img.css("height", "20%");
+         $img.css("width", "20%");
+         // $li.css("padding", "5%");
+         $li.append($way);
+         $li.append($noway);
+         $("#quesults").append($li);
+     });
    }
  }
 });
