@@ -125,14 +125,14 @@ Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3
 
 
  function getPhoto(source) {
-      // Retrieve image file location from specified source
-      navigator.camera.getPicture(gotPic, onPhotoURISuccess, onFail, { quality: 50,
-        destinationType: navigator.camera.DestinationType.DATA_URL,
-        sourceType: source });
-    }
+   // Retrieve image file location from specified source
+   navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+     destinationType: destinationType.FILE_URI,
+     sourceType: source });
+ }
 
 
-function gotPic(data) {
+/* function gotPic(data) {
 var parseFile = new Parse.File("mypic.jpg", {base64:data});
 		parseFile.save().then(function() {
 				navigator.notification.alert("Got it!", null);
@@ -142,4 +142,4 @@ var parseFile = new Parse.File("mypic.jpg", {base64:data});
 				console.log("Error");
 				console.log(error);
 		});
-}
+} */
