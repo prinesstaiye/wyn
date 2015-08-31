@@ -1,6 +1,5 @@
-
+ $( document ).ready(function () {
     Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3rARwFxIOFSuRjyPkMuOHAp");
-$( document ).ready(function () {
   $('#Post').bind("click", function(e) {
         var fileUploadControl = $("#Upload")[0];
          var file = fileUploadControl.files[0];
