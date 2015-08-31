@@ -124,11 +124,13 @@ Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3
 
 
 
- $("#Upload").on("click", function(e) {
-e.preventDefault();
-navigator.camera.getPicture(gotPic, failHandler, {quality:50, destinationType:navigator.camera.DestinationType.DATA_URL, sourceType:navigator.camera.PictureSourceType.PHOTOLIBRARY});
+ function getPhoto(source) {
+      // Retrieve image file location from specified source
+      navigator.camera.getPicture(gotPic, onPhotoURISuccess, onFail, { quality: 50,
+        destinationType: navigator.camera.DestinationType.DATA_URL,
+        sourceType: source });
+    }
 
-});
 
 function gotPic(data) {
 var parseFile = new Parse.File("mypic.jpg", {base64:data});
