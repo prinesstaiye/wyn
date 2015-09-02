@@ -40,7 +40,16 @@ findPost.find({
          
          $img.css("height", "20%");
          $img.css("width", "20%");
+         $img.css("margin-bottom", "10px");
+         $img.css("margin-top", "10px");
+
+         $question.css("font-weight", "bold");
          // $li.css("padding", "5%");
+         $way.css("font-weight", "bold");
+         $way.css("color", "blue");
+         $noway.css("font-weight", "bold");
+         $noway.css("color", "red");
+         $noway.css("margin-top", "-5px");
          $li.append($way);
          $li.append($noway);
          $("#quesults").append($li);
