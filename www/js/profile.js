@@ -37,7 +37,7 @@ findPost.find({
          $li.append($question);
          $li.append($img);
          //$li.css("image", "url("+photo+")");
-         
+
          $img.css("height", "20%");
          $img.css("width", "20%");
          $img.css("margin-bottom", "10px");
