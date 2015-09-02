@@ -125,3 +125,18 @@ footer a:hover {
     font-size: 30px;
     font-weight: 500;
 }
+
+.uploadtext {
+	width:90%;
+	height:70px;
+}
+
+.uploadbtn {
+	width:90%;
+	height:50px;
+	font-size: 1.8em;
+}
+
+#Post {
+	margin-bottom: 62px;
+}
