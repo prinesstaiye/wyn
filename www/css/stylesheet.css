@@ -142,5 +142,6 @@ footer a:hover {
 }
 
 #largeImage {
-	-webkit-transform: scale(0.4); /* Saf3.1+, Chrome */
+	width: 30%;
+	height: 30%;
 }
