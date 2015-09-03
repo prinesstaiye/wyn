@@ -79,14 +79,12 @@ function capturePhotoEdit() {
 
 // A button will call this function
 //
-function getPhoto(source) {
-    // Retrieve image file location from specified source
-    navigator.camera.getPicture(onPhotoURISuccess, onFail, {
-        quality: 50,
-        destinationType: destinationType.FILE_URI,
-        sourceType: source
-    });
-}
+$("#SelectPic").on("click", function(e) {
+		e.preventDefault();
+		navigator.camera.getPicture(gotPic, failHandler,
+			{quality:50, destinationType:navigator.camera.DestinationType.DATA_URL,
+			 sourceType:navigator.camera.PictureSourceType.PHOTOLIBRARY});
+	});
 
 
 
@@ -108,6 +106,16 @@ $('#Post').bind("click", function(e) {
     });
 });
 
+function gotPic(data) {
+		console.log('got here');
+		imagedata = data;
+	}
+
+	function failHandler(e) {
+		alert("ErrorFromC");
+		alert(e);
+		console.log(e.toString());
+	}
 
 // Called if something bad happens.
 //
