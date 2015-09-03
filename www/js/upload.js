@@ -1,5 +1,5 @@
  //$( document ).ready(function () {
-    //Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3rARwFxIOFSuRjyPkMuOHAp");
+    //
     var pictureSource;   // picture source
      var destinationType; // sets the format of returned value
 
@@ -9,6 +9,7 @@
 
      // device APIs are available
      //
+     Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3rARwFxIOFSuRjyPkMuOHAp");
      function onDeviceReady() {
          pictureSource=navigator.camera.PictureSourceType;
          destinationType=navigator.camera.DestinationType;
@@ -72,14 +73,13 @@
 
      // A button will call this function
      //
-     $( "#SelectPic" ).click(function() {
      function getPhoto(source) {
        // Retrieve image file location from specified source
        navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
          destinationType: destinationType.FILE_URI,
          sourceType: source });
      }
-});
+
      // Called if something bad happens.
      //
      function onFail(message) {
