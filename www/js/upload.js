@@ -1,4 +1,4 @@
-//$( document ).ready(function () {
+
 //
 var pictureSource; // picture source
 var destinationType; // sets the format of returned value
@@ -90,7 +90,18 @@ function getPhoto(source) {
 
 
 
-$('#Post').bind("click", function(e) {
+
+
+
+// Called if something bad happens.
+//
+function onFail(message) {
+    alert('Failed because: ' + message);
+}
+
+//  });
+$( document ).ready(function () { 
+    $('#Post').bind("click", function(e) {
     var noteText = $("#QuestionText").val();
     var parseFile = new Parse.File("mypic.jpg", {
         base64: imagedata
@@ -107,12 +118,4 @@ $('#Post').bind("click", function(e) {
 
     });
 });
-
-
-// Called if something bad happens.
-//
-function onFail(message) {
-    alert('Failed because: ' + message);
-}
-
-//  });
+});
