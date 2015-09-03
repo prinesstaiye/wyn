@@ -2,7 +2,7 @@
 //
 var pictureSource; // picture source
 var destinationType; // sets the format of returned value
-
+var imagedata = "";
 // Wait for device API libraries to load
 //
 document.addEventListener("deviceready", onDeviceReady, false);
@@ -88,9 +88,9 @@ function getPhoto(source) {
     });
 }
 
-var imagedata = "";
 
-$("#Post").bind("click", function(e) {
+
+$('#Post').bind("click", function(e) {
     var noteText = $("#QuestionText").val();
     var parseFile = new Parse.File("mypic.jpg", {
         base64: imagedata
