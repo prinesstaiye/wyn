@@ -88,11 +88,6 @@ function getPhoto(source) {
     });
 }
 
-
-
-
-
-
 // Called if something bad happens.
 //
 function onFail(message) {
@@ -100,7 +95,6 @@ function onFail(message) {
 }
 
 //  });
-$( document ).ready(function () { 
     $('#Post').bind("click", function(e) {
     var noteText = $("#QuestionText").val();
     var parseFile = new Parse.File("mypic.jpg", {
@@ -117,5 +111,4 @@ $( document ).ready(function () {
         location.reload();
 
     });
-});
 });
