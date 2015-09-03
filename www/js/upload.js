@@ -1,5 +1,9 @@
- $( document ).ready(function () {
     Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3rARwFxIOFSuRjyPkMuOHAp");
+    var TestObject = Parse.Object.extend("TestObject");
+var testObject = new TestObject();
+testObject.save({foo: "bar"}).then(function(object) {
+  alert("yay! it worked");
+});
     var pictureSource;   // picture source
      var destinationType; // sets the format of returned value
 
@@ -72,7 +76,7 @@
 
      // A button will call this function
      //
-     function window.getPhoto(source) {
+     function getPhoto(source) {
        // Retrieve image file location from specified source
        navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
          destinationType: destinationType.FILE_URI,
@@ -84,5 +88,3 @@
      function onFail(message) {
        alert('Failed because: ' + message);
      }
-
-  });
