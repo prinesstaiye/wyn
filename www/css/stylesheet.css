@@ -140,3 +140,7 @@ footer a:hover {
 #Post {
 	margin-bottom: 62px;
 }
+
+#largeImage {
+	-webkit-transform: scale(0.4); /* Saf3.1+, Chrome */
+}
