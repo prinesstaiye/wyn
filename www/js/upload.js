@@ -1,89 +1,118 @@
- //$( document ).ready(function () {
+//$( document ).ready(function () {
+//
+var pictureSource; // picture source
+var destinationType; // sets the format of returned value
+
+// Wait for device API libraries to load
+//
+document.addEventListener("deviceready", onDeviceReady, false);
+
+// device APIs are available
+//
+Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3rARwFxIOFSuRjyPkMuOHAp");
+
+function onDeviceReady() {
+    pictureSource = navigator.camera.PictureSourceType;
+    destinationType = navigator.camera.DestinationType;
+}
+
+// Called when a photo is successfully retrieved
+//
+function onPhotoDataSuccess(imageData) {
+    // Uncomment to view the base64-encoded image data
+    // console.log(imageData);
+
+    // Get image handle
     //
-    var pictureSource;   // picture source
-     var destinationType; // sets the format of returned value
+    var smallImage = document.getElementById('smallImage');
 
-     // Wait for device API libraries to load
-     //
-     document.addEventListener("deviceready",onDeviceReady,false);
+    // Unhide image elements
+    //
+    smallImage.style.display = 'block';
 
-     // device APIs are available
-     //
-     Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3rARwFxIOFSuRjyPkMuOHAp");
-     function onDeviceReady() {
-         pictureSource=navigator.camera.PictureSourceType;
-         destinationType=navigator.camera.DestinationType;
-     }
+    // Show the captured photo
+    // The in-line CSS rules are used to resize the image
+    //
+    smallImage.src = "data:image/jpeg;base64," + imageData;
+}
 
-     // Called when a photo is successfully retrieved
-     //
-     function onPhotoDataSuccess(imageData) {
-       // Uncomment to view the base64-encoded image data
-       // console.log(imageData);
+// Called when a photo is successfully retrieved
+//
+function onPhotoURISuccess(imageURI) {
+    // Uncomment to view the image file URI
+    // console.log(imageURI);
 
-       // Get image handle
-       //
-       var smallImage = document.getElementById('smallImage');
+    // Get image handle
+    //
+    var largeImage = document.getElementById('largeImage');
 
-       // Unhide image elements
-       //
-       smallImage.style.display = 'block';
+    // Unhide image elements
+    //
+    largeImage.style.display = 'block';
 
-       // Show the captured photo
-       // The in-line CSS rules are used to resize the image
-       //
-       smallImage.src = "data:image/jpeg;base64," + imageData;
-     }
+    // Show the captured photo
+    // The in-line CSS rules are used to resize the image
+    //
+    largeImage.src = imageURI;
+}
 
-     // Called when a photo is successfully retrieved
-     //
-     function onPhotoURISuccess(imageURI) {
-       // Uncomment to view the image file URI
-       // console.log(imageURI);
+// A button will call this function
+//
+function capturePhoto() {
+    // Take picture using device camera and retrieve image as base64-encoded string
+    navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
+        quality: 50,
+        destinationType: destinationType.DATA_URL
+    });
+}
 
-       // Get image handle
-       //
-       var largeImage = document.getElementById('largeImage');
+// A button will call this function
+//
+function capturePhotoEdit() {
+    // Take picture using device camera, allow edit, and retrieve image as base64-encoded string
+    navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
+        quality: 20,
+        allowEdit: true,
+        destinationType: destinationType.DATA_URL
+    });
+}
 
-       // Unhide image elements
-       //
-       largeImage.style.display = 'block';
+// A button will call this function
+//
+function getPhoto(source) {
+    // Retrieve image file location from specified source
+    navigator.camera.getPicture(onPhotoURISuccess, onFail, {
+        quality: 50,
+        destinationType: destinationType.FILE_URI,
+        sourceType: source
+    });
+}
 
-       // Show the captured photo
-       // The in-line CSS rules are used to resize the image
-       //
-       largeImage.src = imageURI;
-     }
+var imagedata = "";
 
-     // A button will call this function
-     //
-     function capturePhoto() {
-       // Take picture using device camera and retrieve image as base64-encoded string
-       navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
-         destinationType: destinationType.DATA_URL });
-     }
+$("#Post").bind("click", function(e) {
+    var noteText = $("#QuestionText").val();
+    var parseFile = new Parse.File("mypic.jpg", {
+        base64: imagedata
+    });
+    console.log(parseFile);
+    parseFile.save().then(function() {
+        var note = new Parse.Object.extend("Upload");
+        note.set("Username", Parse.User.current().getUsername());
+        note.set("Question", noteText);
+        note.set("Photo", parseFile);
+        note.save();
+        alert("Success! You make check your results in your profile page");
+        location.reload();
 
-     // A button will call this function
-     //
-     function capturePhotoEdit() {
-       // Take picture using device camera, allow edit, and retrieve image as base64-encoded string
-       navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true,
-         destinationType: destinationType.DATA_URL });
-     }
+    });
+});
 
-     // A button will call this function
-     //
-     function getPhoto(source) {
-       // Retrieve image file location from specified source
-       navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-         destinationType: destinationType.FILE_URI,
-         sourceType: source });
-     }
 
-     // Called if something bad happens.
-     //
-     function onFail(message) {
-       alert('Failed because: ' + message);
-     }
+// Called if something bad happens.
+//
+function onFail(message) {
+    alert('Failed because: ' + message);
+}
 
 //  });
