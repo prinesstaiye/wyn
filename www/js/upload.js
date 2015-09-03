@@ -1,5 +1,5 @@
- //$( document ).ready(function () {
-    //Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3rARwFxIOFSuRjyPkMuOHAp");
+ $( document ).ready(function () {
+    Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3rARwFxIOFSuRjyPkMuOHAp");
     var pictureSource;   // picture source
      var destinationType; // sets the format of returned value
 
@@ -85,4 +85,4 @@
        alert('Failed because: ' + message);
      }
 
-//  });
+  });
