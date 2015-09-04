@@ -1,4 +1,4 @@
-
+$(document).ready(function() {
 //
 var pictureSource; // picture source
 var destinationType; // sets the format of returned value
@@ -92,7 +92,7 @@ function onFail(message) {
 }
 
 //  });
-  /*  $('#Post').bind("click", function(e) {
+    $('#Post').bind("click", function(e) {
     var noteText = $("#QuestionText").val();
     var parsefile = new Parse.File("mypic.jpg", { base64: imagedata });
     console.log(parseFile);
@@ -104,24 +104,6 @@ function onFail(message) {
         note.save();
         alert("Success! You make check your results in your profile page");
     });
-*/
 
-    $('#Post').bind("click", function(e) {
-
-      var noteText = $("#QuestionText").val();
-      var parsefile = new Parse.File("mypic.jpg", { base64: imagedata });
-      console.log(parseFile);
-      parseFile.save().then(function() {
-
-         var note = new Parse.Object("Upload");
-         note.set("Username", Parse.User.current().getUsername());
-         note.set("Question", noteText);
-         note.set("Photo", parseFile);
-         note.save();
-         alert("Success");
-        }, function(error) {
-
-          alert("error:" + JSON.stringify(error));
-
-        });
+});
 });
