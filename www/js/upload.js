@@ -79,14 +79,11 @@ function capturePhotoEdit() {
 
 // A button will call this function
 //
-function getPhoto(source) {
+$("#SelectPic").on("click", function(e) {
     // Retrieve image file location from specified source
-    navigator.camera.getPicture(onPhotoURISuccess, onFail, {
-        quality: 50,
-        destinationType: destinationType.FILE_URI,
-        sourceType: source
-    });
-}
+    navigator.camera.getPicture(onPhotoURISuccess, onFail, {quality:50, destinationType:navigator.camera.DestinationType.DATA_URL,
+			 sourceType:navigator.camera.PictureSourceType.PHOTOLIBRARY});
+});
 
 // Called if something bad happens.
 //
