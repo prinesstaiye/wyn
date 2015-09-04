@@ -97,9 +97,7 @@ function onFail(message) {
 //  });
     $('#Post').bind("click", function(e) {
     var noteText = $("#QuestionText").val();
-    var parseFile = new Parse.File("mypic.jpg", {
-        base64: imagedata
-    });
+    var parsefile = new Parse.File("mypic.jpg", { base64: imagedata });
     console.log(parseFile);
     parseFile.save().then(function() {
         var note = new Parse.Object.extend("Upload");
@@ -108,7 +106,6 @@ function onFail(message) {
         note.set("Photo", parseFile);
         note.save();
         alert("Success! You make check your results in your profile page");
-        location.reload();
-
     });
+
 });
