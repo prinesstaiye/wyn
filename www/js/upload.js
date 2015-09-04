@@ -1,5 +1,4 @@
-$(document).ready(function() {
-//
+
 var pictureSource; // picture source
 var destinationType; // sets the format of returned value
 var imagedata = "";
@@ -105,5 +104,4 @@ function onFail(message) {
         alert("Success! You make check your results in your profile page");
     });
 
-});
 });
