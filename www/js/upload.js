@@ -22,4 +22,5 @@
              alert("error:" + JSON.stringify(error));
            });
        });
+  $(".glyphicon.glyphicon-pencil").addClass("active");
   });

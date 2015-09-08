@@ -1,13 +1,16 @@
+
 $( document ).ready(function () {
     Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3rARwFxIOFSuRjyPkMuOHAp");
 		var currentUser = Parse.User.current();
 		var username = document.getElementById('username').innerHTML;
+        $(".glyphicon.glyphicon-user").addClass("active")
 		currentUser.fetch().then(function(fetchedUser){
     var username = fetchedUser.getUsername();
     $( "#username" ).replaceWith( fetchedUser.getUsername() );
 }, function(error){
     //Handle the error
 });
+
 
 var posts = Parse.Object.extend("Upload");
 var findPost = new Parse.Query("Upload");

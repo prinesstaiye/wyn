@@ -1,10 +1,9 @@
-	$(document).ready(function() {
+ 	$(document).ready(function() {
 	    Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3rARwFxIOFSuRjyPkMuOHAp");
 	    /**
 	     * jTinder initialization
 	     */
-
-
+$(".glyphicon.glyphicon-home").addClass("active")
 	    /**
 	     * Set button action to trigger jTinder like & dislike.
 	     */

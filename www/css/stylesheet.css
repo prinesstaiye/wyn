@@ -1,11 +1,27 @@
 .input-group {
-	margin-right: auto;
-	margin-left: auto;
+	(opacity=60);opacity:.5;
+	border-top: none;
+	border: 0;
+	position: center ;
+	
+
+	margin-right: -80%;
+	margin-left: -20%;
+	top: 60%;
+    left: 50%;
+   
+    height: 6em;
 }
 
 .index {
-	background-image: url("../img/background.png");
+	background-image: url("../img/background.jpg");
 	text-align: center;
+	background-color: #1068cc
+	background-repeat: no-repeat;
+   background-attachment: fixed;
+    background-position: center; 
+
+
 }
 
 .checkmark {
@@ -19,8 +35,8 @@
 }
 
 .site-footer {
-	border-top: 2px #263961 solid;
-	background-color: #3B5998;
+	border-top: 2px #1068cc solid;
+	background: -webkit-linear-gradient(#1A6BA3, #253860); solid;
 	text-align: center;
 	color: #fff;
 	font-size: 30px;
@@ -31,22 +47,33 @@
 }
 
 .glyphicon {
+
+	-webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: black;
 	padding-left: 10%;
 	padding-right: 10%;
 	/* color: #263961; */
 	color: #fff;
 	top: 5px;
 }
-
+.glyphicon:hover { 
+	color: black;
+}
+.glyphicon.active {
+	color: #000728;
+}
 .wynlogo
 {
 	width: 100%;
 	min-width: 50px;
 	max-width: 200px;
 }
+/*(opacity=60);opacity:6;*/
+
+
 
 .indexlogo
-{
+{(opacity=60);opacity:.0000000001;
 	width: 100%;
 	min-width: 75px;
 	max-width: 300px;
@@ -81,24 +108,34 @@ footer a:hover {
 	text-decoration: none;
 	color: white;
 }
-
+/*background-color: #679eea;*/
 .WYN {
-	border-bottom: 2px #263961 solid;
-	background-color: #3B5998;
-	text-align: center;
-	color: white;
-	position: fixed;
+background: -webkit-linear-gradient(#1A6BA3, #253860); solid;
+	border-bottom: 2px #1068cc;solid;
+	text-align: left;
+	color: #ffffff;
+	 -webkit-text-stroke-width: 1.5px;
+   -webkit-text-stroke-color: black;
+position: fixed;
 	top: 0;
 	width: 100%;
 	margin-left: 0px;
-	font-family: 'Josefin Sans', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-size: 80px;
+  font-weight: 700;
+	
 }
 
 .button {
+
 	float: right;
+
 }
 
+
+
 .form {
+
 	width: 368px;
 }
 
@@ -116,6 +153,7 @@ footer a:hover {
 }
 
 .question {
+	color: #1068cc;
     position: absolute;
     bottom: 0;
     width: 100%;
